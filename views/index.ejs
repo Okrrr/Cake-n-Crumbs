@@ -27,6 +27,16 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="/order">Order Online</a></li>
                         <li><a href="/contact">Contact</a></li>
+                        <% if (sessionUser) { %>
+                          <li><a href="/admin">Dashboard</a></li>
+                          <li>
+                            <form method="post" action="/staff/logout" style="display:inline;">
+                              <button type="submit" style="background:none;border:none;color:inherit;cursor:pointer;">Logout</button>
+                            </form>
+                          </li>
+                        <% } else { %>
+                          <li><a href="/staff/login">Staff</a></li>
+                        <% } %>
                     </ul>
                 </nav>
                 <a href="/order" class="cta-button">Order Now</a>
