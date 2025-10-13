@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff Login</title>
+  <link rel="stylesheet" href="/main.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">Cake n Crumbs</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/order">Order Online</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="max-width: 480px; margin-top: 60px;">
+    <h1>Staff Login</h1>
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div style="background:#ffe5e5;color:#8b0000;padding:10px;border-radius:6px;margin-bottom:16px;"><%= error %></div>
+    <% } %>
+    <form method="post" action="/staff/login" class="form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <button type="submit" class="cta-button">Login</button>
+    </form>
+  </div>
+</body>
+</html>

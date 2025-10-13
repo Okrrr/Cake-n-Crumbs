@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/main.css" />
+  <style>
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+    th { background: #fafafa; }
+    .toolbar { display: flex; justify-content: space-between; align-items: center; margin: 20px 0; }
+    .link-button { background: none; border: none; padding: 0; margin: 0; color: #0070f3; text-decoration: underline; font: inherit; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">Cake n Crumbs</a>
+        <nav>
+          <ul>
+            <li><a href="/admin/orders" class="active">Orders</a></li>
+            <li>
+              <form method="post" action="/staff/logout" style="display:inline;">
+                <button type="submit" class="link-button">Logout (<%= (sessionUser && sessionUser.username) || 'staff' %>)</button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="toolbar">
+      <h1>Orders</h1>
+      <div>
+        <a class="cta-button" href="/">Go to Site</a>
+      </div>
+    </div>
+
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div style="background:#ffe5e5;color:#8b0000;padding:10px;border-radius:6px;margin-bottom:16px;"><%= error %></div>
+    <% } %>
+
+    <% if (!orders || orders.length === 0) { %>
+      <p>No orders yet.</p>
+    <% } else { %>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Customer</th>
+              <th>Contact</th>
+              <th>Type</th>
+              <th>Total</th>
+              <th>Created</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% orders.forEach(function(order) { %>
+              <tr>
+                <td><%= order.id %></td>
+                <td><%= order.customer_name %></td>
+                <td>
+                  <div><%= order.customer_email || '-' %></div>
+                  <div><%= order.customer_phone || '-' %></div>
+                </td>
+                <td><%= order.order_type %></td>
+                <td>$<%= Number(order.total || 0).toFixed(2) %></td>
+                <td><%= (order.created_at && new Date(order.created_at).toLocaleString()) || '' %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>
