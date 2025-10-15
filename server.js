@@ -32,7 +32,21 @@ app.get("/", (req, res) => {
 
 app.get("/order", (req, res) => {
   res.render("order.ejs");
+}); 
+
+app.post("/order", (req, res) => {
+  const { customerName, item, quantity } = req.body;
+  dbConn.query(
+    "INSERT INTO orders (customer_name, item, quantity) VALUES (?, ?, ?)",
+    [customerName, item, quantity],
+    (err, result) => {
+      if (err) return res.status(500).send("Database error");
+      res.redirect("/");
+    }
+  );
 });
+
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
+
