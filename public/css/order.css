@@ -40,7 +40,7 @@ h1, h2, h3, h4 {
 
 /* Header */
 header {
-    background-color: rgba(255, 249, 245, 0.95);
+    background-color: rgba(236, 161, 112, 0.95);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;

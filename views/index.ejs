@@ -33,33 +33,49 @@
             <h2 class="section-title">Our Signature Creations</h2>
             <p class="section-subtitle">Handcrafted with the finest ingredients for exceptional flavor</p>
             
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="cakes">Cakes</button>
+                <button class="filter-btn" data-category="cupcakes">Cupcakes</button>
+                <button class="filter-btn" data-category="snacks">Snacks</button>
+            </div>
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1587248720328-4daa08f11b9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80');"></div>
+                    <div class="product-img" style="background-image: url('/images/blackforest.jpg');"></div>
                     <div class="product-info">
-                        <h3 class="product-title">Sourdough Bread</h3>
-                        <p class="product-desc">Slow-fermented for 24 hours for optimal flavor and texture</p>
-                        <p class="product-price">$7.99</p>
+                        <h3 class="product-title">Black Forest Cake</h3>
+                        <p class="product-desc">Layers of chocolate sponge, cherries, and whipped cream</p>
+                        <p class="product-price">Ksh 1,100</p>
                         <a href="#" class="cta-button">Add to Cart</a>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=692&q=80');"></div>
+                    <div class="product-img" style="background-image: url('/images/carrot.jpg');"></div>
                     <div class="product-info">
-                        <h3 class="product-title">Chocolate Croissant</h3>
-                        <p class="product-desc">Flaky pastry with premium Belgian chocolate filling</p>
-                        <p class="product-price">$4.50</p>
+                        <h3 class="product-title">Carrot Cake</h3>
+                        <p class="product-desc">Moist carrot cake with cream cheese frosting</p>
+                        <p class="product-price">Ksh 1,000</p>
                         <a href="#" class="cta-button">Add to Cart</a>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1612203985729-70726954388c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');"></div>
+                    <div class="product-img" style="background-image: url('/images/redvelvet.jpg');"></div>
                     <div class="product-info">
-                        <h3 class="product-title">Berry Tart</h3>
-                        <p class="product-desc">Buttery shortcrust filled with vanilla custard and fresh berries</p>
-                        <p class="product-price">$6.75</p>
+                        <h3 class="product-title">Red Velvet Cake</h3>
+                        <p class="product-desc">Rich red velvet cake with cream cheese frosting</p>
+                        <p class="product-price">Ksh 675</p>
+                        <a href="#" class="cta-button">Add to Cart</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('/images/cupcakes.jpg');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cupcakes</h3>
+                        <p class="product-desc">Deliciously moist cupcakes with a variety of frostings</p>
+                        <p class="product-price">Ksh 675</p>
                         <a href="#" class="cta-button">Add to Cart</a>
                     </div>
                 </div>
@@ -68,7 +84,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
@@ -168,10 +184,6 @@
     <!-- Footer -->
     <%- include("_footer.ejs") %>
 
-    <script src="/js/products.js"></script>
-    <script src="/js/cart.js"></script>
-    <script src="/js/ui.js"></script>
-    <script src="/js/checkout.js"></script>
-    <script src="/js/main.js"></script>
+<script type="module" src="/js/main.js"></script>
 </body>
 </html>

@@ -21,11 +21,25 @@ export function removeFromCart(id) {
   saveCart();
 }
 
+export function updateQuantity(id, type) {
+  const item = cart.find((p) => p.id === id);
+  if (!item) return;
+  if (type === "increase") item.quantity++;
+  if (type === "decrease") {
+    item.quantity--;
+    if (item.quantity <= 0) removeFromCart(id);
+  }
+  saveCart();
+}
+
 export function clearCart() {
   cart = [];
   saveCart();
 }
 
-export function getCartTotal() {
-  return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+export function getCartTotals(TAX_RATE = 0.08, DELIVERY_FEE = 0, deliverySelected = false) {
+  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const tax = subtotal * TAX_RATE;
+  const total = subtotal + tax + (deliverySelected ? DELIVERY_FEE : 0);
+  return { subtotal, tax, total };
 }

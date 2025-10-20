@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Online | Cake n Crumbs</title>
     <link rel="stylesheet" href="/css/order.css" />
+    <link rel="stylesheet" href="/css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -25,7 +26,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/order" class="active">Order Online</a></li>
                         <li><a href="/menu">Menu</a></li>
-                        <li><a href="/about">About</a></li>
+                        <li><a href="/#about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -57,7 +58,7 @@
                 </div>
                 
                 <h2>Our Bakery Selection</h2>
-                <div class="products-grid" id="products-grid">
+                <div class="products-card" id="products-card">
                     <!-- Products will be loaded here by JavaScript -->
                 </div>
             </div>
@@ -127,7 +128,7 @@
             <h2>Complete Your Order</h2>
             <form id="checkout-form">
                 <div class="form-group">
-                    <label for="customer-name">Full Name *</label>
+                    <label for="customer-name">Full Name </label>
                     <input type="text" id="customer-name" required>
                 </div>
                 
@@ -164,6 +165,6 @@
     <!-- Footer -->
     <%- include("_footer.ejs") %>
 
-
-</body> 
+    <script type="module" src="/js/main.js"></script>
+</body>
 </html>
